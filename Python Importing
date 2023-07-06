@@ -1,0 +1,20 @@
+Модуль с опознаванием музыки по голосовому сообщению написан на Python, поэтому для подключения его к проекту, на компьютере(на котором хостится бот) должен быть установлен Python 3.8.
+
+После установки Python 3.8 нужно установить необходимые библиотеки. Для этого нужно открыть командную строчки у прописать 2 команды:
+pip install requests
+pip install pythonnet
+
+Далее в Visual Studio нужно подключить библиотеку с Python.RunTime, нажав правой кнопкой мыши по References в обозревателе решений выберите добавить ссылку->далее библиотеку нужно найти в папке с python.
+Обычно путь к библиотеке должен быть таким: C:\Users\UserName\AppData\Local\Programs\Python\Python38\Lib\site-packages\pythonnet\runtime\Python.runtime.dll.
+
+После поключения библиотеки к проекту нужнj поменять ссылки файлах Shazampy.cs и testing.py.
+
+В файле Shazampy.cs в строке 19 нужно указать путь к папке site-packages(папка с библиотеками для python), обычно путь должен быть таким: C:\Users\UserName\AppData\Local\Programs\Python\Python38\Lib\site-packages\
+Так же в строчке 31 и 33 нужно поменять пути:
+В 31 строке путь к версии Python 3.8, обычно путь должен быть таким: C:\Users\UserName\AppData\Local\Programs\Python\Python38\python38.dll (обязательно указать имя файла).
+В 33 строки путь к папке, в которой находится Python 3.8, обычно путь должен быть таким: C:\Users\UserName\AppData\Local\Programs\Python\Python38
+
+В файле testing.py нужно переназначить ссылки на текстовые файлы в строке 25, 34, 38,примеры путей(должны совпадать с путями указанными в TelegramBotProject в блоке музыки):
+25 строчка: ...\TelegramBot\Functional\FilePath.txt
+34 строчка: ...\TelegramBot\Functional\Music.txt
+38 строчка: ...\TelegramBot\Functional\Music.txt
